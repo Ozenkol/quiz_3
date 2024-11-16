@@ -60,7 +60,7 @@
   <TransitionGroup name="list" tag="ul">
     <li v-for="item in todoList" :key="item.id">
       <TodoItem :item="item">
-        <button @click="delete(item.id)">Delete</button>
+        <button @click="">Delete</button>
       </TodoItem>
     </li>
   </TransitionGroup>
