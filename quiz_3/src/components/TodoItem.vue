@@ -12,7 +12,6 @@ import { ref } from 'vue';
     item: TodoItem
   }>()
     const emit = defineEmits<{
-      (e: 'done', id: number): void
       (e: 'delete', value: string): void
     }>()
   
@@ -21,7 +20,6 @@ import { ref } from 'vue';
 <template>
   <Transition>
     <div class="item">
-      <input type="checkbox" @click="$emit('done', item.id)">
       <div class="item__content" :class="{'completed': item.completed }">
         {{ item.title }}
       </div>

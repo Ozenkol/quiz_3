@@ -41,6 +41,12 @@
   function addItem() {
     todoList.value.push(newItem.value)
   }
+  // function delete(todo_id:number): void {
+  //   var index = todoList.value.map(x => {
+  //     return x.id;
+  //   }).indexOf(todo_id);
+  //   todoList.value.splice(index, 1);
+  // }
 </script>
 
 <template>
@@ -53,7 +59,9 @@
   
   <TransitionGroup name="list" tag="ul">
     <li v-for="item in todoList" :key="item.id">
-      <TodoItem :item="item" @add="(i) => count += i"></TodoItem>
+      <TodoItem :item="item">
+        <button @click="delete(item.id)">Delete</button>
+      </TodoItem>
     </li>
   </TransitionGroup>
 </template>
